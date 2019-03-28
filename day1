@@ -1,0 +1,78 @@
+
+public  class day1 {
+public  static int location(int[] nums, int target){
+    int i;
+    int  s =-1;
+    if(target>nums[nums.length-1]||target<nums[0]){
+       System.out.println("没有目标值");
+    }
+    else{
+
+      if(nums.length%2==0){
+          if(target>nums[nums.length/2-1]){
+              for(int  k=nums.length/2-1;k<nums.length-1;k++){
+                  if(target==nums[k]){
+                      s=k;
+                   break;
+                  }
+              }
+
+          }else{
+              for(int j =0;j<nums.length/2-1;j++){
+                  if(target==nums[j]){
+                      s=j;
+                      break;
+
+                  }
+              }
+
+
+          }
+      }else{
+          if(target>nums[(nums.length-1)/2]){
+
+              for(int p=(nums.length-1)/2;p<(nums.length-1);p++){
+                  if (target == nums[p]){
+                          s=p;
+                       break;
+                  }
+
+              }
+
+
+
+          }else{
+              for(int u=0;u<=(nums.length-1)/2;u++){
+                  if (target == nums[u]){
+                      s=u;
+                      break;
+
+
+                  }
+
+              }
+
+
+
+          }
+
+
+
+
+      }
+    };
+
+return s;
+};
+
+public static void main(String[] arg){
+    int[] test={1,2,3,4,5,6,7,8,9,10,34};
+    int D=location(test,9);
+    System.out.println("目标值位于:"+D);
+
+}
+
+
+
+}
+
