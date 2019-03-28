@@ -1,0 +1,34 @@
+
+
+class Code{
+    public int codeing(int[] nums){
+        int s = -1;
+        if(nums.length<3||nums[0]>=nums[1]||nums[nums.length-2]<nums[nums.length-1])
+        System.out.println("数组不够长度!或者不满足要求!");
+
+        else{
+
+
+            for (int i=1;i < nums.length; i++){
+               if( nums[i-1]<nums[i]&&nums[i]>nums[i+1]) {
+                   s=i;
+                   break;
+               }
+            }
+        }
+
+   return s; }
+}
+
+public class practice {
+    public static void main(String [] args){
+        int [] we={1,2,1,3,4,5,3,6};
+     Code a=new Code();
+int q=a.codeing(we);
+System.out.println("峰值位置："+q);
+
+
+    }
+
+
+}
